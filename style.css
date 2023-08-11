@@ -1,0 +1,140 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);
+a {
+  text-decoration: none;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  font-family: Roboto Mono;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+.header .logo {
+  height: 4rem;
+  cursor: pointer;
+}
+
+.header {
+  padding: 0 5rem;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(103, 43, 243);
+}
+
+.nav-list {
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.list-item:link,
+.list-item:visited {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 1s;
+}
+
+.nav-list:hover .list-item{
+    filter: blur(10px);
+}
+.nav-list:hover .list-item:hover{
+    filter: blur(0px);
+}
+
+.menu-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.mobile-view {
+  display: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-icon[name="close-outline"] {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .mobile-view {
+    display: block;
+    z-index: 999;
+  }
+
+  .header {
+    padding: 0 2rem;
+    position: relative;
+  }
+  .logo {
+    height: 2rem;
+  }
+  .navbar {
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(103, 43, 243);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .nav-list {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .active .navbar {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .active .mobile-view .menu-icon[name="close-outline"] {
+    display: block;
+  }
+  .active .mobile-view .menu-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+.hero-section {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-section h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+.git-icon {
+  color: black;
+  height: 6rem;
+  width: 6rem;
+}
